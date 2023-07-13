@@ -1,0 +1,24 @@
+@import url('./fonts/fonts.less');
+@import url('./fonts/icons-font.less');
+@import url('./nullstyle');
+
+#adapt(@pcSize, @mobSize, @dependWidth: 1280) {
+	@sizeDiff: @pcSize - @mobSize;
+	@value: calc(@mobSize * 1px + (@pcSize - @mobSize) * ((100vw - 320px) / (@dependWidth - 320)));
+}
+
+@tempVar: rgb(46, 47, 49);
+
+body {
+	font-family: 'Quicksand';
+	font-weight: normal;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+
+	overflow: hidden;
+}
