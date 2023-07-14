@@ -4,11 +4,12 @@ import { useRecipesStore } from '../store/store';
 import RecipeList from './recipeList/recipeList.jsx';
 
 export default function App() {
-	const fetchData = useRecipesStore((state) => state.fetch);
+	const fetchServersData = useRecipesStore((state) => state.fetchServersData);
 
 	useEffect(() => {
-		fetchData();
+		fetchServersData();
 	}, []);
+
 	return (
 		<div className="wrapper">
 			<RecipeList />
