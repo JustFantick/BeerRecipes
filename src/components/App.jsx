@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useRecipesStore } from '../store/store';
 
+import RecipeList from './recipeList/recipeList.jsx';
+
 export default function App() {
-	const recipes = useRecipesStore((state) => state.recipes);
 	const fetchData = useRecipesStore((state) => state.fetch);
 
 	useEffect(() => {
@@ -10,7 +11,8 @@ export default function App() {
 	}, []);
 	return (
 		<div className="wrapper">
-			Got from store: {recipes.length !== 0 ? recipes[0].name : 'null'}
+			<RecipeList />
+
 		</div>
 	)
 }

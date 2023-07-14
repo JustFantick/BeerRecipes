@@ -10,15 +10,20 @@
 @tempVar: rgb(46, 47, 49);
 
 body {
-	font-family: 'Quicksand';
+	font-family: 'Inter';
+	font-size: 16px;
 	font-weight: normal;
 }
 
 .wrapper {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
+	padding: 5vh 10px;
 	background-size: cover;
 	background-position: center;
 
 	overflow: hidden;
 }
+
+@import url('./components/recipeList/recipeList.less');
+@import url('./components/recipeCart/recipeCart.less');
