@@ -4,7 +4,8 @@ import RecipeCart from '../recipeCart/recipeCart.jsx';
 import DeleteButton from '../deleteButton/deleteButton.jsx';
 
 export default function RecipeList() {
-	const recipes = useRecipesStore((state) => state.recipes);
+	const recipes = useRecipesStore(state => state.recipes);
+	const removeMarkedRecipes = useRecipesStore(state => state.removeMarkedRecipes);
 
 	return (
 		<main className="recipe-list">
@@ -17,7 +18,7 @@ export default function RecipeList() {
 				/>
 			)}
 
-			<DeleteButton />
+			<DeleteButton onClick={removeMarkedRecipes} />
 		</main>
 	)
 }

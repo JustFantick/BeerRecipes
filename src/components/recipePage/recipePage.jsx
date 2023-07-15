@@ -4,11 +4,12 @@ import { useRecipesStore } from '../../store/store';
 export default function RecipePage() {
 	const recipeId = useRecipesStore((state) => state.recipeId);
 	const recipe = useRecipesStore((state) => state.recipes[recipeId - 1]);
+	const setRenderRecipeList = useRecipesStore(state => state.setRenderRecipeList);
 
 	return (
 		<div className='recipe-page'>
 			<div className="recipe-page__img">
-				<img src={recipe ? recipe.image_url : '#'} alt={recipe ? `${recipe.name}_img` : 'Name not found'} />
+				<img src={recipe ? recipe.image_url : '#'} alt={recipe ? `${recipe.name}_img` : 'Img not found'} />
 			</div>
 
 			<div className="recipe-page__info recipe-page-info">
@@ -17,7 +18,7 @@ export default function RecipePage() {
 					<h4>{recipe ? recipe.tagline : 'Tagline not found'}</h4>
 					<p><span>First brewed:</span> {recipe ? recipe.first_brewed : 'date not found'}</p>
 
-					<div className="back-btn"></div>
+					<div className="back-btn" onClick={() => setRenderRecipeList(true)}></div>
 				</div>
 				<div className="recipe-page-info__description">
 					<div className="horizontal-line"></div>

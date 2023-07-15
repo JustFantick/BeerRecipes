@@ -1,10 +1,7 @@
 import React from 'react'
 
-export default function DeleteButton() {
-	function onClick() {
-		console.log('btn click');
-	}
+export default function DeleteButton(props) {
 	return (
-		<div className='delete-btn active' onClick={onClick}></div>
+		<div className='delete-btn active' onClick={props.onClick}></div>
 	)
 }
