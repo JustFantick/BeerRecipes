@@ -8,6 +8,23 @@ const store = (set, get) => ({
 		set((state) => ({ fetchCounter: state.fetchCounter + 1 }));
 		set({ recipes: await response.json() });
 	},
+	markRecipeAsChosen: (recipeId) => {
+		set((state) => ({
+			recipes: state.recipes.map((obj, i) => {
+				if (recipeId === obj.id) {
+					return {
+						...obj,
+						chosen: true,
+					}
+				}
+
+				return obj;
+			})
+		}));
+	},
+	removeMarkedRecipes: () => {
+		set((state) => ({ recipes: state.recipes.filter(recipe => recipe.chosen === true) }));
+	},
 	increasePopulation: () => set((state) => ({ recipes: state.recipes + 1 })),
 	setNull: () => set({ recipes: 0 }),
 });
