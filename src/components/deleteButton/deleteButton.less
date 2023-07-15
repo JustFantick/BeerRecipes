@@ -1,0 +1,45 @@
+.delete-btn {
+	cursor: pointer;
+
+	height: #adapt(70, 55, 1440)[@value];
+	width: #adapt(70, 55, 1440)[@value];
+
+	@media (min-width: 1440px) {
+		height: 70px;
+		width: 70px;
+	}
+
+	background-color: #ffb300;
+	border-radius: 15px;
+
+	position: fixed;
+	top: 100%;
+	right: 10%;
+
+	transition: all 0.3s ease-in-out;
+
+	&.active {
+		top: 85%;
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		height: 85%;
+		width: 4px;
+		border-radius: 5px;
+		background-color: white;
+	}
+
+	&::after {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	&::before {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+}
