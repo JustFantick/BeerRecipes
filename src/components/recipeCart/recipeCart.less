@@ -27,6 +27,28 @@
 	&__info {
 		flex: 1 1 80%;
 	}
+
+
+	position: relative;
+
+	&::before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		border-radius: 15px;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		transition: all 0.25s ease-in-out;
+		background-color: transparent;
+	}
+
+	&.chosen:before {
+		transition: all 0.25s ease-in-out;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
 }
 
 .cart-info {
