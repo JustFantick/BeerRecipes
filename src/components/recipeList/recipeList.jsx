@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecipesStore } from '../../store/store.js';
 import RecipeCart from '../recipeCart/recipeCart.jsx';
+import DeleteButton from '../deleteButton/deleteButton.jsx';
 
 export default function RecipeList() {
 	const recipes = useRecipesStore((state) => state.recipes);
@@ -15,6 +16,8 @@ export default function RecipeList() {
 					author={recipe.contributed_by} date={recipe.first_brewed}
 				/>
 			)}
+
+			<DeleteButton />
 		</main>
 	)
 }
