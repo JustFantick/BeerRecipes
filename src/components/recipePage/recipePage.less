@@ -2,7 +2,7 @@
 	border-radius: 15px;
 	background-color: rgba(128, 128, 128, 0.25);
 
-	padding: 50px;
+	padding: #adapt(50, 20)[@value];
 
 	display: flex;
 	gap: 60px;
@@ -53,15 +53,6 @@
 		flex-direction: column;
 		gap: 10px;
 
-		h2 {
-			color: #000;
-			font-family: 'Quicksand';
-			font-size: 40px;
-			font-style: normal;
-			font-weight: 600;
-			line-height: normal;
-		}
-
 		h4 {
 			color: #000;
 			font-family: 'Quicksand';
@@ -84,45 +75,63 @@
 			}
 		}
 
-		position: relative;
+		.head-title-row {
+			display: flex;
+			justify-content: space-between;
+			gap: 10px;
 
-		.back-btn {
-			cursor: pointer;
+			h2 {
+				display: inline;
+				color: #000;
+				font-family: 'Quicksand';
+				font-size: #adapt(40, 28)[@value];
 
-			height: #adapt(70, 55, 1440)[@value];
-			width: #adapt(70, 55, 1440)[@value];
+				@media (min-width: 1440px) {
+					font-size: 40px;
+				}
 
-			@media (min-width: 1440px) {
-				height: 60px;
-				width: 60px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: normal;
 			}
 
-			background-color: transparent;
-			border-radius: 15px;
+			.back-btn {
+				cursor: pointer;
 
-			position: absolute;
-			top: 0px;
-			right: 0px;
+				height: #adapt(60, 40, 1440)[@value];
+				width: #adapt(60, 40, 1440)[@value];
 
-			&::after,
-			&::before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				left: 50%;
+				@media (min-width: 1440px) {
+					height: 60px;
+					width: 60px;
+				}
 
-				height: 85%;
-				width: 4px;
-				border-radius: 5px;
-				background-color: black;
-			}
+				background-color: transparent;
+				border-radius: 15px;
 
-			&::after {
-				transform: translate(-50%, -50%) rotate(45deg);
-			}
+				position: relative;
+				float: right;
 
-			&::before {
-				transform: translate(-50%, -50%) rotate(-45deg);
+				&::after,
+				&::before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 50%;
+
+					height: 85%;
+					width: 4px;
+					border-radius: 5px;
+					background-color: black;
+				}
+
+				&::after {
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+
+				&::before {
+					transform: translate(-50%, -50%) rotate(-45deg);
+				}
 			}
 		}
 	}

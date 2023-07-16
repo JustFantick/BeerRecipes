@@ -35,11 +35,14 @@ export default function RecipePage() {
 
 				<div className="recipe-page__info recipe-page-info">
 					<div className="recipe-page-info__head">
-						<h2>{recipe ? recipe.name : 'Name not found'}</h2>
+						<div className="head-title-row">
+							<h2>{recipe ? recipe.name : 'Name not found'}</h2>
+							<div className="back-btn" onClick={onBackBtnClick}></div>
+
+						</div>
 						<h4>{recipe ? recipe.tagline : 'Tagline not found'}</h4>
 						<p><span>First brewed:</span> {recipe ? recipe.first_brewed : 'date not found'}</p>
 
-						<div className="back-btn" onClick={onBackBtnClick}></div>
 					</div>
 					<div className="recipe-page-info__description">
 						<div className="horizontal-line"></div>
