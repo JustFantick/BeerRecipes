@@ -4,13 +4,18 @@ import { useRecipesStore } from '../../store/store';
 
 export default function RecipeCart(props) {
 	const cartBlock = useRef(null);
+
+	const setRecipeListInAnim = useRecipesStore(state => state.setRecipeListInAnim);
 	const setRecipeId = useRecipesStore(state => state.setRecipeId);
 	const setRenderRecipeList = useRecipesStore(state => state.setRenderRecipeList);
 	const markRecipe = useRecipesStore(state => state.markRecipe);
 
 	function onClickHandler() {
 		setRecipeId(props.id);
-		setRenderRecipeList(false);
+		setRecipeListInAnim(false);
+		setTimeout(() => {
+			setRenderRecipeList(false);
+		}, 300);
 	}
 
 	function rightClickHandler(e) {

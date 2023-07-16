@@ -4,4 +4,16 @@
 	justify-content: center;
 	align-items: center;
 	gap: #adapt(25, 20)[@value];
+
+	transition: all 0.3s ease-in-out;
+
+	&-exit-done,
+	&-exit-active {
+		opacity: 0;
+	}
+
+	&-enter-active,
+	&-enter-done {
+		opacity: 1;
+	}
 }

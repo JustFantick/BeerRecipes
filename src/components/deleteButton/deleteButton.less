@@ -13,14 +13,9 @@
 	border-radius: 15px;
 
 	position: fixed;
-	top: 100%;
 	right: 10%;
-
-	transition: all 0.3s ease-in-out;
-
-	&.active {
-		top: 85%;
-	}
+	top: 85%;
+	transform: translate(0, 100%);
 
 	&::after,
 	&::before {
@@ -41,5 +36,19 @@
 
 	&::before {
 		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+
+	transition: all 0.3s ease-in;
+	opacity: 0;
+
+	&-exit-done,
+	&-exit-active {
+		opacity: 0;
+	}
+
+	&-enter-active,
+	&-enter-done {
+		opacity: 1;
+		transform: translate(0, 0%);
 	}
 }
