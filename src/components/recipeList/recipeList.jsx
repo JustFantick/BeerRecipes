@@ -35,7 +35,7 @@ export default function RecipeList() {
 						imgUrl={recipe.image_url} imgAlt={recipe.name + '_img'}
 						cartName={recipe.name}
 						description={recipe.description}
-						author={recipe.contributed_by} date={recipe.first_brewed}
+						date={recipe.first_brewed}
 					/>
 				)}
 
